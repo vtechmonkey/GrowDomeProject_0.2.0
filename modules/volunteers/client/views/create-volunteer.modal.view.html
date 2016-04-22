@@ -1,0 +1,80 @@
+<section data-ng-controller="VolunteersCreateController as vcCtrl">
+  <div class="modal-header">
+    <h3 class="modal-title">New Volunteer</h3>
+  </div>
+  <div class="modal-body">
+  </div>
+  <div class="modal-body">
+    <form name="createVolunteerForm">
+      <fieldset>
+        <div class="row">
+          <div class="col-sm-6 text-center">
+            <i class="glyphicon glyphicon-user volunteerIcon"
+               ng-class="{'text-success':volunteer.full_time,'text-primary':!volunteer.full_time}"></i>
+          </div>
+          <div class="col-sm-6 text-center">
+            <div class="form-group">
+              <label class="control-label" for="firstName">first name</label>
+
+              <div class="controls">
+                <input type="text" data-ng-model="vcCtrl.firstName" id="firstName" class="form-control"
+                       placeholder="first name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="lastName">last name</label>
+
+              <div class="controls">
+                <input type="text" data-ng-model="vcCtrl.lastName" id="lastName" class="form-control"
+                       placeholder="last name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="phone">phone</label>
+
+              <div class="controls">
+                <input type="text" data-ng-model="vcCtrl.phone" id="phone" class="form-control" placeholder="phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="email">email</label>
+
+              <div class="controls">
+                <input type="text" data-ng-model="vcCtrl.email" id="email" class="form-control" placeholder="email"
+                       required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="full_time">available full time</label>
+
+              <div class="controls">
+                <input type="checkbox" data-ng-model="vcCtrl.full_time" id="full_time"
+                       class="form-control checkboxFulltime">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="experience">Experience Level</label>
+
+              <div class="controls">
+                <select ng-model="volunteer.experienceLevel" id="experience" class="form-control"
+                        ng-options="experience.item for experience in experienceLevel">
+                  <option value="">-- volunteer's experience level --</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-success" ng-click="vcCtrl.create(); ok()" ng-disabled="newVolunteerForm.$invalid">Save &
+      Close
+    </button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>
+
+
+</section>

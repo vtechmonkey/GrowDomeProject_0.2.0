@@ -1,0 +1,105 @@
+<section class="main-content" data-ng-controller="HomeController">
+  <div class="row horizontalMenu">
+    <div class="col-md-10">
+      <i class="glyphicon glyphicon-menu-hamburger"></i>
+
+    </div>
+    <div class="col-md-2 ">
+      <span><img src="modules/core/client/img/brand/NotificationBell.png"/></span>
+      <span><img src="modules/core/client/img/brand/ChatNotifications.png"/></span>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-2">
+      <p><a href="#"><img src="modules/core/client/img/Png/TimeDateCopy.png"/></a></p>
+    </div>
+    <div class="col-sm-2">
+      <p><a href="#"><img src="modules/core/client/img/Png/Rialto.png"/> </a></p>
+    </div>
+    <div class="col-sm-2">
+      <p><a href="#"><img src="modules/core/client/img/Png/NextHarvest.png"/> </a></p>
+    </div>
+    <div class="col-sm-6">
+      <p><a href="#"><img src="modules/core/client/img/Png/Sensors.png"/> </a></p>
+    </div>
+  </div><!--close row-->
+  <div class="row">
+    <div class="col-sm-9">
+      <p><a href="#"><img src="modules/core/client/img/Png/Calendar.png" class="max-width"/></a></p>
+    </div>
+    <div class="col-sm-3">
+      <!-- The chat view -->
+      <section ng-controller="ChatController">
+        <div class="page-header">
+          <h3>Login above to Chat</h3>
+        </div>
+        <!-- The message form -->
+        <form  ng-submit="sendMessage();">
+          <fieldset class="row">
+            <div class="input-group">
+              <input type="text" id="messageText" name="messageText" class="form-control" ng-model="messageText"
+                     placeholder="Enter new message">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-disabled="!messageText.length">Submit</button>
+        </span>
+            </div>
+          </fieldset>
+        </form>
+        <ul class="list-unstyled">
+          <!-- List all messages -->
+          <li class="chat-message" ng-repeat="message in messages">
+            <small class="pull-right text-muted" ng-bind="message.created | date:'mediumTime'"></small>
+            <img ng-src="{{message.profileImageURL}}" alt="{{message.username}}" class="pull-left chat-profile-image"/>
+
+            <div class="pull-left chat-message-details">
+              <strong ng-bind="message.username"></strong>
+              <br>
+              <span ng-bind="message.text"></span>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div><!--close top row-->
+</section>
+<section class="main-content row" data-ng-controller="VolunteersController as volunteersCtrl">
+  <div class=" col-sm-4">
+    <button type="button" class="btn btn-lg btn-blue" id="homeViewAddVolunteer" ng-click="volunteersCtrl.modalCreate('lg')">
+    <i class="glyphicon glyphicon-user"></i>
+    New Volunteer
+  </button>
+  </div>
+
+  <div class=" col-sm-8 text-center list-volunteer">
+    <volunteer-list></volunteer-list><!-- directive -->
+  </div>
+</section>
+
+
+<!--<section data-ng-controller="HomeController">-->
+<!--<div class="row">-->
+
+<!--<div class="col-sm-6" ng-repeat="alert in alerts">-->
+<!--<div class="row">-->
+<!--<div class="col-xs-4">-->
+<!--<h1 class="pull-right">-->
+<!--<button type="button" class="btn" ng-class="alert.colour">-->
+<!--<i class="glyphicon" ng-class="alert.icon"></i>-->
+<!--</button>-->
+<!--</h1>-->
+<!--</div>-->
+<!--<div class="col-xs-8">-->
+<!--<h1>{{alert.total}}</h1>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-xs-8 col-xs-offset-4">-->
+<!--<span class="text-muted">{{alert.description}}</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</section>-->
