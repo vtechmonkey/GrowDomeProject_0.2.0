@@ -1,8 +1,8 @@
 'use strict';
 
 // Volunteers controller
-angular.module('volunteers').controller('VolunteersController', ['$scope', '$stateParams','$location', 'Authentication', 'Volunteers', '$modal', '$log',
-  function ($scope,$location, $stateParams, Authentication, Volunteers, $modal, $log) {
+angular.module('volunteers').controller('VolunteersController', ['$scope', '$location', '$stateParams', 'Authentication', 'Volunteers', '$modal', '$log',
+  function ($scope, $location, $stateParams, Authentication, Volunteers, $modal, $log) {
 
 
     this.authentication = Authentication;
