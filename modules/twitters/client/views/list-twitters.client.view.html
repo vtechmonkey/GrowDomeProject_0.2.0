@@ -1,0 +1,26 @@
+<section>
+  <div class="page-header">
+    <h1>Tweets</h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="twitter in vm.twitters"
+       data-ui-sref="twitters.view({ twitterId: twitter._id })"
+        class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="twitter.tweet.created_at | date:'dd/MM/yyyy'"></span>
+        <h4 data-ng-bind="twitter.tweet.text"></h4>
+        <div class="text-muted" data-ng-bind="twitter.tweet.user.description"></div>
+        
+        by
+        <span data-ng-bind="twitter.tweet.user.name"></span>
+        
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="twitter.name"></h4>
+    </a>
+  </div>
+  <div> is this updating?</div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.twitters.$resolved && !vm.twitters.length">
+    No Twitters yet, why don't you <a data-ui-sref="twitters.create">create one</a>?
+  </div>
+</section>
