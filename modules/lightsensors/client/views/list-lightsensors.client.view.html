@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1>Lightsensors</h1>
+  </div> 
+  <div class="list-group">
+
+    <a data-ng-repeat="lightsensor in vm.lightsensors"
+       data-ui-sref="lightsensors.view({ lightsensorId: lightsensor._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+      <h2 data-ng-bind="lightsensor.payload">Current Temperature is {{lightsensor.payload}}</h2>
+        Posted on
+        <span data-ng-bind="lightsensor.created | date:'mediumDate'"></span>
+        by
+        <span data-ng-if="lightsensor.user" data-ng-bind="lightsensor.user.displayName"></span>
+        <span data-ng-if="!lightsensor.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="lightsensor.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.lightsensors.$resolved && !vm.lightsensors.length">
+    No Lightsensors yet, why don't you <a data-ui-sref="lightsensors.create">create one</a>?
+  </div>
+</section>
