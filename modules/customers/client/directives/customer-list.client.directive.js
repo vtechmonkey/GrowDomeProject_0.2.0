@@ -3,6 +3,7 @@
 angular.module('customers').directive('customerList', ['Customers', 'Notify',
   function(Customers, Notify) {
     return {
+      scope:true,
       restrict: 'E',
       transclude: true,
       templateUrl: 'modules/customers/client/views/customer-list-template.html',

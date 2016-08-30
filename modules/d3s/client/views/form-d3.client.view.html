@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.d3._id ? 'Edit D3' : 'New D3'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.d3Form" class="form-horizontal" ng-submit="vm.save(vm.form.d3Form.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.d3.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.d3Form.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">D3 name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.d3._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

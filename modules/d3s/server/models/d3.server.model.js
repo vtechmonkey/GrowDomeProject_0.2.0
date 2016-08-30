@@ -7,19 +7,13 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 /**
- * Lightsensor Schema
+ * D3 Schema
  */
-var LightsensorSchema = new Schema({
-
-  payload: {
-    value:Number,
-    timestamp:Number
-  },
-
+var D3Schema = new Schema({
   name: {
     type: String,
     default: '',
-    required: 'Please fill Lightsensor name',
+    required: 'Please fill D3 name',
     trim: true
   },
   created: {
@@ -32,4 +26,4 @@ var LightsensorSchema = new Schema({
   }
 });
 
-mongoose.model('Lightsensor', LightsensorSchema);
+mongoose.model('D3', D3Schema);

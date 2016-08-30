@@ -10,12 +10,9 @@ var mongoose = require('mongoose'),
  * Chart Schema
  */
 var ChartSchema = new Schema({
-  name: {
-    type: String,
-    default: '',
-    required: 'Please fill Chart name',
-    trim: true
-  },
+  hour: Number,
+  sales: Number,
+  
   created: {
     type: Date,
     default: Date.now

@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>D3s</h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="d3 in vm.d3s"
+       data-ui-sref="d3s.view({ d3Id: d3._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="d3.created | date:'mediumDate'"></span>
+        by
+        <span data-ng-if="d3.user" data-ng-bind="d3.user.displayName"></span>
+        <span data-ng-if="!d3.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="d3.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.d3s.$resolved && !vm.d3s.length">
+    No D3s yet, why don't you <a data-ui-sref="d3s.create">create one</a>?
+  </div>
+</section>

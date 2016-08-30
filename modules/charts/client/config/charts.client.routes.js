@@ -17,7 +17,7 @@
       .state('charts.list', {
         url: '',
         templateUrl: 'modules/charts/client/views/list-charts.client.view.html',
-        controller: 'ChartsController',
+        controller: 'ChartsListController',
         controllerAs: 'vm',
         data: {
           pageTitle: 'Charts List'
@@ -58,7 +58,7 @@
           chartResolve: getChart
         },
         data:{
-          pageTitle: 'Chart {{ articleResolve.name }}'
+          pageTitle: 'Chart {{ articleResolve.name}}'
         }
       });
   }

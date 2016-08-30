@@ -18,9 +18,10 @@ module.exports = {
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'public/lib/d3/d3.js',
-        'public/lib/angular-sanitize/angular-sanitize.js',
-        'public/lib/moment/moment.js'
+        'https://d3js.org/d3.v4.min.js',
+        //'public/lib/d3/d3.js',
+        'public/lib/angular-sanitize/angular-sanitize.js'
+        //'public/lib/moment/moment.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

@@ -5,11 +5,10 @@
     .module('lightsensors')
     .controller('LightsensorsListController', LightsensorsListController);
 
-  LightsensorsListController.$inject = ['LightsensorsService'];
+  LightsensorsListController.$inject = ['LightsensorsService', '$scope'];
 
-  function LightsensorsListController(LightsensorsService) {
+  function LightsensorsListController(LightsensorsService, $scope) {
     var vm = this;
-
     vm.lightsensors = LightsensorsService.query();
   }
 })();
