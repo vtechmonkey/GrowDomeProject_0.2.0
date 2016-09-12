@@ -9,8 +9,8 @@ angular
     Menus.addMenuItem('topbar', {
       title: 'Volunteers',
       state: 'volunteers',
-      type: 'dropdown'
-   //   roles: ['*']
+      type: 'dropdown',
+      roles: ['*']
     });
 
     // add dropdown list item

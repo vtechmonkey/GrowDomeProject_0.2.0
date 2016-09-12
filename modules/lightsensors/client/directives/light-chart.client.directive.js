@@ -11,9 +11,7 @@
   lightChart.$inject = ['$window'];
 
   function lightChart($window) {
-
-       
-    
+        
     return{
       restrict:'EA',
       template:'<svg width="950" height="350"></svg>',
@@ -26,7 +24,8 @@
         var d3 = $window.d3;
         var rawSvg=elem.find('svg');
         var svg =d3.select(rawSvg[0]);
-        
+      
+      
         
         function setChartParameters(){
 
